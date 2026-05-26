@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-brand="walk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nick Dual Brand Dashboard Premium Split</title>
+  <meta name="description" content="Two-account dashboard with a bold Walk The Walk marketing mode and a high-end Goldeneye Realty CRM mode." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Inter:wght@400;500;700;800&family=Manrope:wght@400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
+      --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
+      --text-base:clamp(1rem,.95rem + .25vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
+      --radius-sm:.375rem;--radius-md:.75rem;--radius-lg:1rem;--radius-xl:1.5rem;--radius-full:999px;
+      --transition:180ms cubic-bezier(.16,1,.3,1);
+      --font-body:'Inter',sans-serif;
+      --font-display:'Bebas Neue',sans-serif;
+      --font-alt:'Manrope',sans-serif;
+      --font-serif:'DM Serif Display',serif;
+      --font-marker:'Permanent Marker',cursive;
+      --grid-main:336px 1fr;
+      --panel-pad:1.5rem;
+      --panel-gap:1.25rem;
+      --section-gap:1.75rem;
+    }
+    :root,[data-theme="light"][data-brand="walk"]{
+      --color-bg:#ececec;--color-surface:#f7f7f7;--color-surface-2:#ffffff;--color-surface-offset:#e3e3e3;--color-border:#cecece;--color-text:#171717;--color-text-muted:#4a4a4a;--color-text-inverse:#ffffff;
+      --color-primary:#ff2727;--color-primary-hover:#de1c1c;--color-accent:#13c8eb;--color-gold:#d3b14d;--color-highlight:#fff0d4;--color-panel:#fffef8;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.06);--shadow-md:0 10px 24px rgba(0,0,0,.08);--shadow-lg:0 20px 44px rgba(0,0,0,.12);
+    }
+    [data-theme="dark"][data-brand="walk"]{
+      --color-bg:#121212;--color-surface:#1a1a1a;--color-surface-2:#222;--color-surface-offset:#272727;--color-border:#363636;--color-text:#f4f4f4;--color-text-muted:#c8c8c8;--color-text-inverse:#111;
+      --color-primary:#ff4444;--color-primary-hover:#ff6b6b;--color-accent:#29d5f5;--color-gold:#e2c15c;--color-highlight:#44291d;--color-panel:#191919;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.25);--shadow-md:0 10px 24px rgba(0,0,0,.32);--shadow-lg:0 20px 44px rgba(0,0,0,.42);
+    }
+    [data-theme="light"][data-brand="goldeneye"]{
+      --color-bg:#f3efe8;--color-surface:#faf7f1;--color-surface-2:#ffffff;--color-surface-offset:#ede5d8;--color-border:#d7cbb7;--color-text:#201b14;--color-text-muted:#6b6255;--color-text-inverse:#f9f5ee;
+      --color-primary:#b58a33;--color-primary-hover:#9b7528;--color-accent:#173b45;--color-gold:#c79d49;--color-highlight:#f4ead6;--color-panel:#fffdfa;
+      --shadow-sm:0 1px 2px rgba(35,31,23,.05);--shadow-md:0 16px 36px rgba(35,31,23,.08);--shadow-lg:0 28px 60px rgba(35,31,23,.12);
+    }
+    [data-theme="dark"][data-brand="goldeneye"]{
+      --color-bg:#15120f;--color-surface:#1e1914;--color-surface-2:#26201a;--color-surface-offset:#2d261f;--color-border:#493d31;--color-text:#efe5d5;--color-text-muted:#c7b9a3;--color-text-inverse:#15120f;
+      --color-primary:#d3a84f;--color-primary-hover:#e1be71;--color-accent:#4f8f9a;--color-gold:#e4c06c;--color-highlight:#3c3125;--color-panel:#211b16;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.24);--shadow-md:0 16px 36px rgba(0,0,0,.3);--shadow-lg:0 28px 60px rgba(0,0,0,.42);
+    }
+    *,:before,:after{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;transition:background var(--transition),color var(--transition)} a{text-decoration:none;color:inherit} button,input,textarea,select{font:inherit;color:inherit} button{background:none;border:none;cursor:pointer} img,svg{display:block;max-width:100%;height:auto}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    .skip-link{position:absolute;left:var(--space-4);top:-100px;background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);z-index:1000}.skip-link:focus{top:var(--space-4)}
+    .shell{display:grid;grid-template-columns:var(--grid-main);min-height:100dvh}
+    .sidebar{position:sticky;top:0;height:100dvh;padding:calc(var(--space-6) + .25rem);background:linear-gradient(180deg,var(--color-surface),var(--color-surface-offset));border-right:1px solid var(--color-border);display:flex;flex-direction:column;gap:var(--space-6);transition:all var(--transition)}
+    [data-brand="goldeneye"] .sidebar{background:linear-gradient(180deg,color-mix(in srgb,var(--color-surface) 82%,#fff),var(--color-surface-offset));}
+    .brand{display:grid;gap:var(--space-4)}
+    .brand-head{display:flex;align-items:center;gap:var(--space-3)}
+    .logo{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:var(--color-surface-2);box-shadow:var(--shadow-sm);overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    .brand-title{display:grid;gap:.15rem}
+    .brand-title h1{margin:0;font-size:clamp(2rem,1.4rem + 1.4vw,3rem);line-height:.9}
+    .brand-title p{margin:0;color:var(--color-text-muted);font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+    [data-brand="walk"] .brand-title h1{font-family:var(--font-display);letter-spacing:.04em;text-transform:uppercase;text-shadow:2px 2px 0 rgba(0,0,0,.12)}
+    [data-brand="goldeneye"] .brand-title h1{font-family:var(--font-serif);font-size:clamp(1.8rem,1.25rem + 1vw,2.5rem);line-height:1.02;letter-spacing:.01em}
+    [data-brand="goldeneye"] .brand-title p{font-family:var(--font-alt);font-weight:700;letter-spacing:.12em}
+    .account-switcher{display:grid;gap:var(--space-3)}
+    .account-card{padding:var(--panel-pad);border-radius:var(--radius-xl);background:var(--color-surface-2);border:1px solid rgba(0,0,0,.08);box-shadow:var(--shadow-sm)}
+    .account-card h2{margin:0 0 .35rem;font-size:var(--text-lg)} .account-card p{margin:0 0 .35rem;color:var(--color-text-muted);font-size:var(--text-sm)}
+    .switch-list{display:grid;gap:var(--space-2)}
+    .switch-btn,.theme-btn,.nav a,.cta,.secondary,.mini-btn,.channel-btn{min-height:46px;border-radius:var(--radius-full);display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);padding:0 1rem;transition:all var(--transition);font-size:var(--text-sm);font-weight:700;letter-spacing:.01em}
+    .switch-btn{justify-content:space-between;border:1px solid rgba(0,0,0,.08);background:var(--color-surface)}
+    .switch-btn.active{background:var(--color-primary);color:var(--color-text-inverse);border-color:transparent}
+    .switch-btn small{opacity:.8;font-size:.78rem}
+    .nav{display:grid;gap:.45rem} .nav a{justify-content:flex-start;color:var(--color-text-muted);font-weight:700;padding-inline:1rem;border:1px solid transparent;position:relative}.nav a.active,.nav a:hover{background:var(--color-highlight);color:var(--color-primary);border-color:color-mix(in srgb,var(--color-primary) 14%,transparent)} .nav a.active::before{content:'';width:8px;height:8px;border-radius:999px;background:var(--color-primary);margin-right:.2rem;display:inline-block}
+    .theme-btn,.secondary,.mini-btn,.channel-btn{border:1px solid rgba(0,0,0,.1);background:var(--color-surface-2)} .theme-btn:hover,.secondary:hover,.mini-btn:hover,.switch-btn:hover,.channel-btn:hover{background:var(--color-surface-offset);transform:translateY(-1px)}
+    .cta{background:var(--color-primary);color:var(--color-text-inverse);font-weight:800;box-shadow:var(--shadow-sm)} .cta:hover{background:var(--color-primary-hover);transform:translateY(-1px)}
+    .status{padding:var(--panel-pad);border-radius:var(--radius-lg);background:var(--color-surface-2);border:1px solid rgba(0,0,0,.08)} .status strong{display:block;margin-bottom:.45rem;font-size:var(--text-sm);text-transform:uppercase;letter-spacing:.08em}.status span{color:var(--color-text-muted);font-size:var(--text-sm)}
+    .sidebar-footer{margin-top:auto;display:grid;gap:var(--space-3)}
+    .main{padding:calc(var(--space-6) + .25rem);display:grid;gap:var(--section-gap)}
+    .hero{padding:clamp(1.5rem,2vw,2.5rem);border-radius:calc(var(--radius-xl) + .25rem);border:1px solid rgba(0,0,0,.08);box-shadow:var(--shadow-md);overflow:hidden;position:relative}
+    [data-brand="walk"] .hero{background:linear-gradient(135deg,color-mix(in srgb,var(--color-primary) 6%,var(--color-surface)),color-mix(in srgb,var(--color-accent) 8%,var(--color-surface-offset)))}
+    [data-brand="walk"] .hero::after{content:"";position:absolute;inset:auto -8% -30% auto;width:260px;height:260px;border-radius:50%;background:color-mix(in srgb,var(--color-accent) 14%,transparent);filter:blur(10px)}
+    [data-brand="goldeneye"] .hero{background:linear-gradient(135deg,color-mix(in srgb,var(--color-panel) 90%,#fff),color-mix(in srgb,var(--color-highlight) 68%,var(--color-surface)));}
+    [data-brand="goldeneye"] .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(199,157,73,.08),transparent);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:calc(var(--space-6) + .25rem);align-items:end;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-3);border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+    [data-brand="walk"] .eyebrow{background:var(--color-accent)} [data-brand="goldeneye"] .eyebrow{background:var(--color-accent);font-family:var(--font-alt)}
+    .hero-note{display:block;margin:0 0 var(--space-3)}
+    [data-brand="walk"] .hero-note{font-family:var(--font-marker);color:var(--color-accent);font-size:clamp(1.4rem,1rem + 1vw,2.5rem);transform:rotate(-3deg)}
+    [data-brand="goldeneye"] .hero-note{font-family:var(--font-alt);color:var(--color-primary);font-size:var(--text-sm);font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    .hero h2{margin:0 0 var(--space-4);line-height:.92}
+    [data-brand="walk"] .hero h2{max-width:9ch;font-size:clamp(2.6rem,2rem + 3vw,5rem);font-family:var(--font-display);text-transform:uppercase;letter-spacing:.03em}
+    [data-brand="goldeneye"] .hero h2{max-width:12ch;font-size:clamp(2.2rem,1.6rem + 2vw,4rem);font-family:var(--font-serif);letter-spacing:.01em}
+    .hero p{margin:0 0 var(--space-6);max-width:60ch;color:var(--color-text-muted)}
+    .hero-actions,.chip-row,.footer-grid{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+    .panel,.metric,.script-card,.quick-card,.broker-card,.pipeline-card{background:var(--color-surface);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);transition:all var(--transition)}
+    .panel{padding:var(--panel-pad)}
+    [data-brand="goldeneye"] .panel,[data-brand="goldeneye"] .metric,[data-brand="goldeneye"] .script-card,[data-brand="goldeneye"] .quick-card,[data-brand="goldeneye"] .broker-card,[data-brand="goldeneye"] .pipeline-card{background:var(--color-panel)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-4);margin-bottom:var(--space-4)} .section-head p{margin:0;color:var(--color-text-muted)}
+    .section-title{margin:0 0 .2rem;font-size:var(--text-lg)}
+    [data-brand="walk"] .section-title{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.04em}
+    [data-brand="goldeneye"] .section-title{font-family:var(--font-serif);font-weight:400;letter-spacing:.01em}
+    .chip{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .8rem;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:800;text-transform:uppercase;letter-spacing:.06em;background:var(--color-highlight);color:var(--color-text);border:1px solid color-mix(in srgb,var(--color-primary) 10%,transparent)}
+    .metrics-grid{display:grid;gap:var(--panel-gap);margin-top:0}
+    [data-brand="walk"] .metrics-grid{grid-template-columns:repeat(4,1fr)}
+    [data-brand="goldeneye"] .metrics-grid{grid-template-columns:repeat(3,1fr)}
+    .metric{padding:1.25rem;border-radius:1.25rem} .metric small{color:var(--color-text-muted);display:block;text-transform:uppercase;letter-spacing:.08em;font-size:var(--text-xs);font-weight:800;margin-bottom:.55rem} .metric strong{display:block;margin:0 0 .7rem;font-size:clamp(1.6rem,1.25rem + 1vw,2.3rem);line-height:1}
+    .trend{height:8px;border-radius:999px;background:var(--color-surface-offset);overflow:hidden}.trend span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--color-primary),var(--color-accent));transform-origin:left center;animation:growBar 800ms cubic-bezier(.16,1,.3,1)}
+    .card-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:calc(var(--space-6) + .25rem)}
+    .quick-wrap{display:grid;gap:var(--panel-gap);margin-top:0}
+    [data-brand="walk"] .quick-wrap{grid-template-columns:repeat(3,1fr)}
+    [data-brand="goldeneye"] .quick-wrap{grid-template-columns:1fr}
+    .quick-card{padding:1.25rem;min-height:150px;align-content:start} .quick-card h4{margin:0 0 .35rem} .quick-card p{margin:0;color:var(--color-text-muted);font-size:var(--text-sm)}
+    [data-brand="goldeneye"] .quick-card{display:grid;grid-template-columns:140px 1fr;gap:var(--space-4);align-items:center;border-radius:calc(var(--radius-xl) + .5rem)}
+    [data-brand="goldeneye"] .quick-card .label{font-family:var(--font-alt);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-primary);font-weight:800}
+    .goldeneye-board{display:none}
+    [data-brand="goldeneye"] .goldeneye-board{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--space-6)}
+    .broker-card,.pipeline-card{padding:var(--panel-pad)}
+    .broker-card h4,.pipeline-card h4{margin:0 0 .75rem}
+    [data-brand="goldeneye"] .broker-card h4,[data-brand="goldeneye"] .pipeline-card h4{font-family:var(--font-serif);font-weight:400;font-size:1.35rem}
+    .list-stack{display:grid;gap:var(--space-4)}
+    .list-item{display:flex;justify-content:space-between;gap:var(--space-4);padding-bottom:var(--space-4);border-bottom:1px solid var(--color-border)}
+    .list-item:last-child{border-bottom:0;padding-bottom:0}
+    .list-item strong{display:block}
+    .list-item span{color:var(--color-text-muted);font-size:var(--text-sm)}
+    .badge{display:inline-flex;align-items:center;padding:.35rem .7rem;border-radius:var(--radius-full);background:var(--color-highlight);font-size:var(--text-xs);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .script-grid{display:grid;gap:var(--panel-gap)}
+    [data-brand="walk"] .script-grid{grid-template-columns:repeat(3,1fr)}
+    [data-brand="goldeneye"] .script-grid{grid-template-columns:1fr 1fr}
+    .script-card{padding:var(--panel-pad);display:grid;gap:var(--panel-gap);min-height:290px;align-content:start;grid-template-rows:auto 1fr auto}
+    .script-card h4{margin:0;font-size:1.08rem}
+    [data-brand="walk"] .script-card h4{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.04em}
+    [data-brand="goldeneye"] .script-card h4{font-family:var(--font-serif);font-weight:400;font-size:1.3rem}
+    .script-text{padding:1rem 1.05rem;border-radius:var(--radius-lg);background:var(--color-surface-offset);font-size:var(--text-sm);color:var(--color-text-muted)}
+    .script-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);padding-top:.25rem;border-top:1px solid color-mix(in srgb,var(--color-border) 80%,transparent)}
+    .composer{display:grid;gap:var(--panel-gap)} textarea{width:100%;min-height:220px;resize:vertical;line-height:1.55;border:1px solid var(--color-border);background:var(--color-surface-2);padding:var(--space-4);border-radius:var(--radius-lg)}
+    .composer-row{display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;padding-top:var(--space-2)}
+    .pill-select{display:flex;flex-wrap:wrap;gap:var(--space-2)} .pill-select button[aria-pressed="true"]{background:var(--color-primary);color:var(--color-text-inverse);border-color:transparent}
+    .footnote{padding:1rem 1.05rem;border-radius:var(--radius-lg);background:var(--color-surface-offset);color:var(--color-text-muted);font-size:var(--text-sm)}
+    .hidden{display:none !important}
+    footer{padding-top:var(--space-2);padding-bottom:var(--space-8);color:var(--color-text-muted)} .footer-grid{justify-content:space-between;align-items:center}
+    @keyframes growBar{from{transform:scaleX(.35);opacity:.35}to{transform:scaleX(1);opacity:1}}
+    @keyframes pulseSoft{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+    @keyframes slideFadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .hero,.panel,.goldeneye-board{animation:slideFadeUp 420ms cubic-bezier(.16,1,.3,1)}
+    .cta:active,.secondary:active,.mini-btn:active,.channel-btn:active,.theme-btn:active,.switch-btn:active{transform:translateY(0) scale(.985)}
+    .chip{transition:transform var(--transition),background var(--transition),border-color var(--transition)}
+    .chip:hover{transform:translateY(-1px)}
+    .logo{transition:transform 220ms cubic-bezier(.16,1,.3,1),box-shadow 220ms cubic-bezier(.16,1,.3,1)}
+    .brand-head:hover .logo{transform:rotate(-2deg) scale(1.03);box-shadow:var(--shadow-md)}
+    textarea{transition:border-color var(--transition),box-shadow var(--transition),background var(--transition)}
+    textarea:focus{border-color:color-mix(in srgb,var(--color-primary) 55%,var(--color-border));box-shadow:0 0 0 4px color-mix(in srgb,var(--color-primary) 14%,transparent)}
+    .script-card .script-text,.quick-card p,.status span{transition:color var(--transition)}
+    .script-card:hover .script-text,.quick-card:hover p{color:var(--color-text)}
+    .nav a{overflow:hidden}
+    .nav a::after{content:"";position:absolute;left:1rem;right:1rem;bottom:.45rem;height:2px;background:var(--color-primary);transform:scaleX(0);transform-origin:left center;transition:transform var(--transition);opacity:.75}
+    .nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
+    .section-title,.brand-title h1{transition:letter-spacing var(--transition),transform var(--transition)}
+    .panel:hover .section-title{transform:translateX(1px)}
+    .switch-btn.active{animation:pulseSoft 320ms cubic-bezier(.16,1,.3,1)}
+    @media (prefers-reduced-motion: reduce){.hero,.panel,.goldeneye-board,.trend span,.switch-btn.active{animation:none !important}.metric:hover,.quick-card:hover,.script-card:hover,.broker-card:hover,.pipeline-card:hover,.chip:hover,.brand-head:hover .logo,.panel:hover .section-title,.theme-btn:hover,.secondary:hover,.mini-btn:hover,.switch-btn:hover,.channel-btn:hover,.cta:hover{transform:none !important}}
+    
+    .mobile-bottom-nav{display:none}
+    .mobile-account-bar{display:none}
+    @media (max-width: 860px){
+      .walk-growth-grid,.authority-grid,.stats-grid,.workspace-grid,.scripts{grid-template-columns:1fr}
+      body{padding-bottom:5.75rem}
+      .shell{display:block}
+      .sidebar{position:sticky;top:0;z-index:30;width:100%;height:auto;min-height:unset;padding:1rem 1rem .85rem;border-right:none;border-bottom:1px solid rgba(0,0,0,.08);backdrop-filter:blur(12px);background:color-mix(in srgb,var(--color-bg) 88%,transparent)}
+      .nav,.sidebar .status-card,.sidebar .sidebar-footer{display:none}
+      .brand-head{margin-bottom:.25rem}
+      .switcher{margin-top:.75rem}
+      .main{padding:1rem 1rem 5.5rem}
+      .hero{padding:1.15rem;grid-template-columns:1fr;gap:1rem}
+      .hero-copy p,.hero-footnote{max-width:none}
+      .hero-actions{display:grid;grid-template-columns:1fr;gap:.75rem}
+      .hero-chips{gap:.45rem}
+      .hero-visual{min-height:180px;order:-1}
+      .metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+      .content-grid,.goldeneye-board{grid-template-columns:1fr;gap:1rem}
+      .panel{padding:1rem}
+      .panel-head{align-items:flex-start;gap:.5rem}
+      .scripts{grid-template-columns:1fr}
+      .script-card{padding:1rem}
+      .quick-grid,.broker-grid,.pipeline-grid{grid-template-columns:1fr}
+      .list-item{grid-template-columns:minmax(0,1fr) auto;gap:.75rem;align-items:start}
+      textarea{min-height:180px}
+      .mobile-account-bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin:0 0 1rem;padding:.85rem 1rem;border:1px solid rgba(0,0,0,.08);border-radius:var(--radius-xl);background:var(--color-surface);box-shadow:var(--shadow-sm)}
+      .mobile-account-bar strong{font-size:var(--text-sm)}
+      .mobile-account-bar span{font-size:var(--text-xs);color:var(--color-text-muted)}
+      .mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:repeat(5,1fr);gap:.35rem;padding:.65rem .75rem calc(.65rem + env(safe-area-inset-bottom));border-top:1px solid rgba(0,0,0,.08);background:color-mix(in srgb,var(--color-surface) 92%,transparent);backdrop-filter:blur(18px)}
+      .mobile-bottom-nav a{min-height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.18rem;border-radius:14px;color:var(--color-text-muted);text-decoration:none;font-size:.68rem;font-weight:700;letter-spacing:.02em}
+      .mobile-bottom-nav a svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+      .mobile-bottom-nav a.active{color:var(--color-primary);background:color-mix(in srgb,var(--color-primary) 10%,transparent)}
+      .mobile-bottom-nav a:active{transform:scale(.98)}
+      .desktop-only{display:none !important}
+    }
+    @media (max-width: 520px){
+      .metrics{grid-template-columns:1fr}
+      .metric{padding:1rem}
+      .hero{padding:1rem}
+      .section-title{max-width:18ch}
+      .mobile-bottom-nav a{font-size:.64rem}
+    }
+
+    @media (max-width:1100px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--color-border)}.hero-grid,.card-grid,.goldeneye-board,.metrics-grid,.quick-wrap,.script-grid{grid-template-columns:1fr 1fr}.sidebar-footer{margin-top:0}}
+    @media (max-width:760px){.main,.sidebar,.hero,.panel,.broker-card,.pipeline-card{padding:var(--space-4)} .metric,.quick-card,.script-card{min-height:auto}.hero-grid,.card-grid,.goldeneye-board,.metrics-grid,.quick-wrap,.script-grid,[data-brand="goldeneye"] .quick-card{grid-template-columns:1fr}.nav{grid-template-columns:1fr 1fr}.nav a{justify-content:center}.section-head,.footer-grid,.composer-row{display:grid}.hero h2{max-width:11ch}.switch-btn{padding:var(--space-3) var(--space-4);height:auto}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-head">
+          <div class="logo" aria-hidden="true">
+            <img id="brand-logo" src="file:115" alt="Walk The Walk logo" width="58" height="58" loading="eager">
+          </div>
+          <div class="brand-title">
+            <h1 id="brand-title">Walk The Walk</h1>
+            <p id="brand-subtitle">Personal marketing command deck</p>
+          </div>
+        </div>
+        <div class="account-switcher account-card">
+          <h2>Choose account</h2>
+          <p>One login shell, two very different moods.</p>
+          <div class="switch-list" role="tablist" aria-label="Account switcher">
+            <button class="switch-btn active" data-brand-target="walk" role="tab" aria-selected="true"><span>Walk The Walk</span><small>Personal marketing</small></button>
+            <button class="switch-btn" data-brand-target="goldeneye" role="tab" aria-selected="false"><span>Goldeneye Realty CRM</span><small>Broker/admin</small></button>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#focus">Focus</a>
+        <a href="#scripts">Scripts</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#composer">Composer</a>
+        <a href="#settings">Settings</a>
+      </nav>
+
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="Switch theme">Toggle light / dark</button>
+
+      <div class="status" id="sidebar-status">
+        <strong>Walk The Walk mode</strong>
+        <span>Built for personal brand heat: content hooks, social rhythm, and audience-facing scripts.</span>
+      </div>
+
+      <div class="sidebar-footer">
+        <a class="secondary" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="secondary" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="secondary" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main class="main" id="main">
+      <section class="hero" id="overview" id="overview">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow" id="hero-eyebrow">Dual account dashboard</span>
+            <span class="hero-note" id="hero-note">The real stuff of real estate</span>
+            <h2 id="hero-title">Your personal brand machine, turned all the way up.</h2>
+            <p id="hero-copy">This side is for audience growth, thought leadership, video hooks, listing hype, and all the voice-driven content that makes people remember your name.</p>
+            <div class="hero-actions" style="margin-top:.25rem;">
+              <a class="cta" href="#composer" id="hero-cta-primary">Draft personal post</a>
+              <a class="secondary" href="#scripts" id="hero-cta-secondary">Open content scripts</a>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="section-head">
+              <div>
+                <h3 class="section-title">Mode identity</h3>
+                <p>Visual rules and tone for the active workspace.</p>
+              </div>
+            </div>
+            <div class="chip-row" id="hero-chips">
+              <span class="chip">Bold campaign tone</span>
+              <span class="chip">Social-first scripts</span>
+              <span class="chip">Audience growth</span>
+              <span class="chip">Walk The Walk visuals</span>
+            </div>
+            <p class="footnote" id="hero-footnote" style="margin-top:1rem;">Think of this mode as your microphone: visible, memorable, and built to move attention.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="analytics" class="panel">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title">Snapshot</h3>
+            <p id="metrics-copy">Track the numbers that matter for the active account.</p>
+          </div>
+        </div>
+        <div class="metrics-grid" id="metrics-grid">
+          <div class="metric"><small id="metric-1-label">Script opens</small><strong id="metric-1-value">124</strong><div class="trend"><span style="width:78%"></span></div></div>
+          <div class="metric"><small id="metric-2-label">Copy clicks</small><strong id="metric-2-value">38</strong><div class="trend"><span style="width:52%"></span></div></div>
+          <div class="metric"><small id="metric-3-label">Posts sent</small><strong id="metric-3-value">19</strong><div class="trend"><span style="width:40%"></span></div></div>
+          <div class="metric" id="metric-4"><small id="metric-4-label">Share lift</small><strong id="metric-4-value">+17%</strong><div class="trend"><span style="width:64%"></span></div></div>
+        </div>
+      </section>
+
+      <section id="focus" class="card-grid">
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <h3 class="section-title">Focus areas</h3>
+              <p id="focus-copy">These cards shift by account so the dashboard feels purpose-built, not copy-pasted.</p>
+            </div>
+          </div>
+          <div class="quick-wrap" id="focus-cards"></div>
+        </div>
+
+        <aside class="panel" id="mode-aside">
+          <h3 class="section-title">How the split works</h3>
+          <div class="chip-row" style="margin-bottom:1rem;">
+            <span class="chip">Same login shell</span>
+            <span class="chip">Different themes</span>
+            <span class="chip">Different scripts</span>
+            <span class="chip">Different KPIs</span>
+          </div>
+          <p class="footnote">In a real build, each account would have its own workspace, filters, saved drafts, channel connections, and analytics rules. This prototype simulates that split in one switchable interface.</p>
+        </aside>
+      </section>
+
+      <section class="goldeneye-board hidden" id="goldeneye-board">
+        <article class="broker-card">
+          <h4>Priority pipeline</h4>
+          <div class="list-stack">
+            <div class="list-item"><div><strong>1182 Ridge Haven</strong><span>Seller lead · pricing consult requested · 9 days in pipeline</span></div><span class="badge">Qualify</span></div>
+            <div class="list-item"><div><strong>West Main buyer</strong><span>Pre-approved · buyer consult complete · 3 homes shortlisted</span></div><span class="badge">Showing</span></div>
+            <div class="list-item"><div><strong>Lakeside investor</strong><span>Second tour booked · cap rate questions pending · Sunday 2:00 PM</span></div><span class="badge">Active</span></div>
+          </div>
+        </article>
+        <article class="pipeline-card">
+          <h4>Broker workflow</h4>
+          <div class="list-stack">
+            <div class="list-item"><div><strong>Speed-to-lead</strong><span>Median first response time today is 11 minutes</span></div><strong>11m</strong></div>
+            <div class="list-item"><div><strong>Stage conversion</strong><span>Consult to active client conversion is 58% this month</span></div><strong>58%</strong></div>
+            <div class="list-item"><div><strong>Stale leads</strong><span>8 leads have no logged touch in 14+ days and need review</span></div><strong>8</strong></div>
+          </div>
+        </article>
+      </section>
+
+      <section id="scripts">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title">Script vault</h3>
+            <p id="scripts-copy">The active account decides which scripts appear here and how they’re framed.</p>
+          </div>
+        </div>
+        <div class="toolbar-group" id="category-filter-bar" style="margin-top:.75rem;flex-wrap:wrap;"></div><p class="eyebrow" id="category-count" style="margin-top:.5rem;">0 categories visible</p>
+              <div class="script-grid" id="script-grid" style="margin-top:1rem;"></div>
+            </section>
+
+      <section id="composer" class="card-grid">
+        <div class="panel composer">
+          <div class="section-head">
+            <div>
+              <h3 class="section-title">Composer</h3>
+              <p id="composer-copy">Draft content for the currently selected account.</p>
+            </div>
+          </div>
+          <div class="pill-select" aria-label="Choose channel" style="margin-top:.25rem;">
+            <button class="channel-btn" aria-pressed="true">Facebook</button>
+            <button class="channel-btn" aria-pressed="false">Instagram</button>
+            <button class="channel-btn" aria-pressed="false">LinkedIn</button>
+          </div>
+          <textarea id="composer-text" placeholder="Write your post here."></textarea>
+          <div class="composer-row">
+            <button class="cta" id="publish-demo">Simulate publish</button>
+            <button class="secondary" id="save-draft">Save draft</button>
+            <span id="composer-status" style="color:var(--color-text-muted)">No post sent yet.</span>
+          </div>
+        </div>
+
+        <aside class="panel" id="settings">
+          <h3 class="section-title">Account behavior</h3>
+          <p class="footnote" id="settings-copy">Walk The Walk should prioritize content velocity, social engagement, and audience-facing scripts. Goldeneye CRM should prioritize follow-up speed, lead stages, operational checklists, and client communication.</p>
+          <div class="chip-row" id="settings-chips" style="margin-top:1rem;"></div>
+        </aside>
+      </section>
+
+      <footer>
+        <div class="footer-grid">
+          <p id="footer-copy">Walk The Walk mode active.</p>
+          <div class="chip-row">
+            <span class="chip">Two-account concept</span>
+            <span class="chip">Single dashboard shell</span>
+            <span class="chip">Theme-aware interface</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const brandLogos = { walk: 'file:115', goldeneye: 'file:114' };
+    const modes = {
+      walk: {
+        title: 'Walk The Walk',
+        subtitle: 'Personal marketing command deck',
+        statusTitle: 'Walk The Walk mode',
+        statusCopy: 'Built for local authority, personal brand heat, and conversion-focused content that turns attention into conversations.',
+        eyebrow: 'Personal brand command deck',
+        note: 'Rock Hill voice · local authority · conversion focus',
+        heroTitle: 'Become the agent people remember before they are ready to move.',
+        heroCopy: 'Walk The Walk is your personal brand engine: sharp local insight, memorable voice, client proof, and clear next steps that turn content views into real conversations.',
+        ctaPrimary: 'Create new script',
+        ctaSecondary: 'Open script vault',
+        heroChips: ['Rock Hill authority','Social-first content','Trust building','Lead conversion'],
+        heroFootnote: 'The goal is simple: move faster, keep your scripts organized, and reduce friction in daily use.',
+        metricsCopy: 'Track script usage, content output, and the tasks that matter to your daily marketing rhythm.',
+        metrics: [['Profile views','1,284'],['Script loads','86'],['Posts this week','11'],['Script actions','17']],
+        showFourthMetric: true,
+        focusCopy: 'Walk The Walk now behaves more like a brand-and-conversion hub than a generic content panel.',
+        focus: [
+          ['Magnetic positioning','A sharper promise keeps your own workspace organized around the scripts and campaigns you actually use.'],
+          ['Proof everywhere','Reusable script categories, quick-launch actions, and clearer task groupings do more daily work than decorative sections ever will.'],
+          ['One clear next step','A focused primary action makes the desktop version faster to use every day.']
+        ],
+        scriptsCopy: 'These are personal marketing scripts designed to build trust, visibility, and response.',
+        scripts: [
+          ['Local authority opener',['Market update','LinkedIn'],'“If you’re watching Rock Hill right now, strategy matters more than speed — and the homes winning are the ones positioned on purpose.”'],
+          ['Listing story hook',['New listing','Instagram'],'“This one is more than just fresh on the market — it’s the kind of home that makes people stop scrolling and start texting their spouse.”'],
+          ['Warm nurture check-in',['Sphere','Facebook'],'“If a move is even halfway on your radar this year, I’m happy to help you think through timing before you make any big decisions.”']
+        ],
+        composerCopy: 'Draft public-facing content that sounds like you and pushes people toward a conversation.',
+        placeholder: 'Write a local market take, a listing story, a trust-building post, or a CTA-driven caption that sounds unmistakably like your brand.',
+        settingsCopy: 'Walk The Walk should prioritize script speed, content organization, and quick access to reusable posting tools.',
+        settingsChips: ['Personal brand first','Local authority','Lead capture','Proof-driven'],
+        footer: 'Walk The Walk mode active.',
+        showGoldeneyeBoard: false,
+        walkExtraVisible: true
+      },
+      goldeneye: {
+        title: 'Goldeneye Realty CRM',
+        subtitle: 'Broker operations salon',
+        statusTitle: 'Goldeneye CRM mode',
+        statusCopy: 'Built for lead follow-up, task management, pipeline visibility, and high-touch client operations.',
+        eyebrow: 'Broker command dashboard',
+        note: 'Operational clarity for client movement',
+        heroTitle: 'A calmer, higher-end command view for serious deal flow.',
+        heroCopy: 'Goldeneye mode shifts into a more premium broker/admin layout, with cleaner hierarchy, softer luxury tones, and a workflow-first view designed to keep follow-ups, showings, and sellers moving.',
+        ctaPrimary: 'Open CRM workspace',
+        ctaSecondary: 'Add follow-up task',
+        heroChips: ['Luxury broker tone','Pipeline discipline','Client follow-up','Admin visibility'],
+        heroFootnote: 'Think of this mode as your control room: quieter, sharper, and built to move deals forward.',
+        metricsCopy: 'Goldeneye focuses on pipeline health, response speed, stage progression, and active client movement.',
+        metrics: [['Active leads','42'],['Follow-ups due today','14'],['Buyer consults set','6'],['Under contract','4']],
+        showFourthMetric: true,
+        focusCopy: 'Goldeneye mode uses a more refined layout with structured priorities instead of loud campaign energy.',
+        focus: [
+          ['Response discipline','Median inbound response time is 11 minutes across new internet leads.'],
+          ['Pipeline hygiene','8 leads are stale past 14 days and need a reactivation or close-out decision.'],
+          ['Consult velocity','6 buyer or seller consults are booked over the next 7 days.']
+        ],
+        scriptsCopy: 'These are Goldeneye CRM scripts designed for client communication and process flow.',
+        scripts: [
+          ['New lead response',['Lead intake','CRM'],'“Thanks for reaching out — I’d love to learn exactly what you’re looking for and help map the smartest next step.”'],
+          ['Showing confirmation',['Appointments','Client care'],'“Just confirming our showing time. I’ll have everything lined up so you can focus on what feels right.”'],
+          ['Seller follow-up',['Pipeline','Seller nurture'],'“Wanted to circle back and see where things stand on your timeline so we can plan the right move, not just a fast one.”'],
+          ['Past client check-in',['Sphere','Retention'],'“Checking in to see how things are going on your end and whether you need anything local, strategic, or real-estate related.”']
+        ],
+        composerCopy: 'Draft messages for client care, lead nurture, and operational follow-through.',
+        placeholder: 'Write a lead follow-up, showing confirmation, seller nurture note, or internal CRM script with calm, professional clarity.',
+        settingsCopy: 'Goldeneye CRM should prioritize follow-up speed, lead stages, operational checklists, and client communication.',
+        settingsChips: ['Pipeline focus','Client care','Task discipline','CRM operations'],
+        footer: 'Goldeneye CRM mode active.',
+        showGoldeneyeBoard: true,
+        walkExtraVisible: false
+      }
+    };
+
+    const root = document.documentElement;
+    const filterBar = document.getElementById('filter-bar');
+    const searchInput = document.getElementById('search-input');
+    const importJsonBtn = document.getElementById('import-json-btn');
+    const importFileInput = document.getElementById('import-file-input');
+    const taskForm = document.getElementById('task-form');
+    const taskTitleInput = document.getElementById('task-title-input');
+    const taskMetaInput = document.getElementById('task-meta-input');
+    const taskEmptyState = document.getElementById('task-empty-state');
+    const activityList = document.getElementById('activity-list');
+    const activityCount = document.getElementById('activity-count');
+    const activityEmptyState = document.getElementById('activity-empty-state');
+    const categoryFilterBar = document.getElementById('category-filter-bar');
+    const categoryCount = document.getElementById('category-count');
+    const scriptGrid = document.getElementById('script-grid');
+    const scriptForm = document.getElementById('script-form');
+    const titleInput = document.getElementById('script-title-input');
+    const channelInput = document.getElementById('script-channel-input');
+    const bodyInput = document.getElementById('script-body-input');
+    const toast = document.getElementById('toast');
+    const queueCount = document.getElementById('queue-count');
+    const taskList = document.getElementById('task-list');
+
+    function showToast(message){
+      if(!toast) return;
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(()=>toast.classList.remove('show'), 1800);
+    }
+
+    function refreshQueueCount(){
+      if(!taskList || !queueCount) return;
+      const count = taskList.querySelectorAll('.mini-item').length;
+      queueCount.textContent = `${count} active`;
+      if(taskEmptyState) taskEmptyState.hidden = count !== 0;
+    }
+
+    function normalizeCategoryLabel(value){
+      return value.split('&').map(part => part.trim()).join(' & ');
+    }
+      } catch (error) {
+        externalVaultData = null;
+      }
+    }
+
+    function slugify(value){
+      return String(value || '')
+        .toLowerCase()
+        .replace(/&/g, 'and')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '') || 'general';
+    }
+
+    function platformIcon(platform){
+      const p = String(platform || '').toLowerCase();
+      if(p.includes('linkedin')) return 'in';
+      if(p.includes('facebook')) return 'f';
+      if(p.includes('tiktok')) return 'tt';
+      return 're';
+    }
+
+    function renderScriptGrid(){
+      if(!scriptGrid) return;
+      const activeWorkspace = getActiveWorkspace();
+      const items = (externalVaultData || embeddedScriptVaultData)[activeWorkspace] || [];
+      scriptGrid.innerHTML = items.map((item, index) => {
+        const categorySlug = slugify(item.category);
+        const channelSlug = slugify(item.platform);
+        const title = item.title || 'Untitled script';
+        const audience = item.audience || 'General audience';
+        const tone = item.tone || 'Practical';
+        const stage = item.stage || 'Idea';
+        return `
+          <article class="script-card" data-workspace="${activeWorkspace}" data-channel="${channelSlug}" data-category="${categorySlug}" data-stage="${slugify(stage)}" tabindex="0">
+            <div class="script-meta">
+              <span class="tag">${item.category}</span>
+              <span class="tag">${item.platform}</span>
+              <span class="tag">${audience}</span>
+            </div>
+            <h3>${title}</h3>
+            <blockquote>${tone} angle for ${audience.toLowerCase()} with a ${stage.toLowerCase()} workflow status.</blockquote>
+            <div class="script-actions">
+              <button class="action-button" data-copy-script="${title.replace(/"/g,'&quot;')}" aria-label="Copy ${title}">Copy</button>
+              <button class="action-button secondary" data-stage-label="${stage}">Stage: ${stage}</button>
+            </div>
+            <div class="mini-stat-row">
+              <span>Category</span>
+              <strong>${item.category}</strong>
+            </div>
+            <div class="mini-stat-row">
+              <span>Platform</span>
+              <strong>${platformIcon(item.platform)} · ${item.platform}</strong>
+            </div>
+          </article>`;
+      }).join('');
+    }
+
+    function buildCategoryFilters(){
+      if(!categoryFilterBar || !scriptGrid) return;
+      const activeWorkspace = getActiveWorkspace();
+      const cats = [...new Set([...scriptGrid.querySelectorAll('.script-card')]
+        .filter(card => (card.dataset.workspace || 'walk') === activeWorkspace)
+        .map(card => card.dataset.category || 'uncategorized'))].sort();
+      categoryFilterBar.innerHTML = ['all', ...cats].map(cat => {
+        const label = cat === 'all' ? 'All categories' : normalizeCategoryLabel(cat.replace(/\w/g, s => s.toUpperCase()));
+        return `<button class="filter-chip category-chip ${cat==='all'?'active':''}" data-category-filter="${cat}" aria-pressed="${cat==='all'?'true':'false'}">${label}</button>`;
+      }).join('');
+      if(categoryCount) categoryCount.textContent = `${cats.length} categories visible`;
+    }
+
+    function getActiveCategoryFilter(){
+      return document.querySelector('.category-chip.active')?.dataset.categoryFilter || 'all';
+    }
+
+    function applyFilter(filter){
+      if(!scriptGrid) return;
+      const q = (searchInput?.value || '').trim().toLowerCase();
+      const activeWorkspace = getActiveWorkspace();
+      const activeCategory = getActiveCategoryFilter();
+      let visibleCategories = new Set();
+      scriptGrid.querySelectorAll('.script-card').forEach(card=>{
+        const channel = card.dataset.channel || 'all';
+        const workspace = card.dataset.workspace || 'walk';
+        const category = card.dataset.category || 'uncategorized';
+        const hay = `${card.querySelector('h3')?.textContent || ''} ${card.querySelector('blockquote')?.textContent || ''} ${[...card.querySelectorAll('.tag')].map(t=>t.textContent).join(' ')}`.toLowerCase();
+        const filterPass = filter === 'all' || channel === filter;
+        const searchPass = !q || hay.includes(q);
+        const workspacePass = workspace === activeWorkspace;
+        const categoryPass = activeCategory === 'all' || category === activeCategory;
+        const visible = filterPass && searchPass && workspacePass && categoryPass;
+        card.style.display = visible ? '' : 'none';
+        if(visible) visibleCategories.add(category);
+      });
+      document.querySelectorAll('#filter-bar .filter-chip').forEach(btn=>btn.classList.toggle('active', btn.dataset.filter === filter));
+      document.querySelectorAll('.category-chip').forEach(btn=>{
+        const active = btn.dataset.categoryFilter === activeCategory;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      if(categoryCount) categoryCount.textContent = `${visibleCategories.size} categories visible`;
+      showToast(`Filter: ${filter} · ${activeWorkspace}`);
+    }
+
+    function copyText(text, message='Copied to clipboard'){
+      navigator.clipboard.writeText(text).then(()=>showToast(message)).catch(()=>showToast('Copy failed'));
+    }
+
+    const toggle = document.querySelector('[data-theme-toggle]');
+    let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+    let currentBrand = 'walk';
+    let selectedEditorKey = null;
+    let editingNewRecord = false;
+    const socialProfiles = {
+      walk: {
+        facebook: 'https://www.facebook.com/nick.robbins.9461/',
+        instagram: 'https://www.instagram.com/n_robbins9/',
+        linkedin: 'https://www.linkedin.com/in/nick-robbins-a38736330/'
+      },
+      goldeneye: {
+        facebook: 'https://www.facebook.com/nick.robbins.9461/',
+        instagram: 'https://www.instagram.com/n_robbins9/',
+        linkedin: 'https://www.linkedin.com/in/nick-robbins-a38736330/'
+      }
+    };
+    const embeddedScriptVaultData = {
+  "walk": [
+    {
+      "workspace": "Walk The Walk",
+      "title": "The Three Things I Check That Most Buyers Miss",
+      "category": "Construction & Inspection",
+      "platform": "Reel",
+      "stage": "Idea",
+      "audience": "Buyers",
+      "tone": "Checklist"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "What Flippers Hope You Don't Notice",
+      "category": "Construction & Inspection",
+      "platform": "TikTok",
+      "stage": "Idea",
+      "audience": "Buyers",
+      "tone": "Warning"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "Why I Get Nervous When Everything Looks Perfect",
+      "category": "Construction & Inspection",
+      "platform": "Reel",
+      "stage": "Drafted",
+      "audience": "Buyers",
+      "tone": "Story"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "When to Walk Away Even If You Love the House",
+      "category": "Market & Strategy",
+      "platform": "Facebook",
+      "stage": "Drafted",
+      "audience": "Buyers",
+      "tone": "Mindset"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "Why Waiting for Lower Rates Might Cost You More",
+      "category": "Market & Strategy",
+      "platform": "Reel",
+      "stage": "Drafted",
+      "audience": "Buyers",
+      "tone": "Strategy"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "What Nobody Told Me About Closing Costs",
+      "category": "First-Time Buyers",
+      "platform": "Facebook",
+      "stage": "Drafted",
+      "audience": "First-Time Buyers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "What the Listing Won't Tell You About the Area",
+      "category": "Neighborhood & Local Insight",
+      "platform": "Facebook",
+      "stage": "Drafted",
+      "audience": "Buyers",
+      "tone": "Local Insight"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "Flood Zone Reality Check",
+      "category": "Neighborhood & Local Insight",
+      "platform": "Facebook",
+      "stage": "Drafted",
+      "audience": "Buyers",
+      "tone": "Warning"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "The Offer That Broke My Client's Heart",
+      "category": "Human Side & Mindset",
+      "platform": "Facebook",
+      "stage": "Drafted",
+      "audience": "Buyers",
+      "tone": "Story"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "The 800 Paint Job That Cost 23,000",
+      "category": "Seller Prep",
+      "platform": "Reel",
+      "stage": "Filmed",
+      "audience": "Sellers",
+      "tone": "Story"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "The Offer That Broke My Client's Heart",
+      "category": "Human Side & Mindset",
+      "platform": "Facebook",
+      "stage": "Idea",
+      "audience": "Buyers",
+      "tone": "Story"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "When to Trust Your Gut During a Showing",
+      "category": "Human Side & Mindset",
+      "platform": "Instagram Reels",
+      "stage": "Idea",
+      "audience": "Buyers",
+      "tone": "Mindset"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "Why the Five-Year Plan Matters More Than the Dream Kitchen",
+      "category": "Human Side & Mindset",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "Buyers",
+      "tone": "Perspective"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "What the Listing Won't Tell You About the Area",
+      "category": "Neighborhood & Local Insight",
+      "platform": "Facebook",
+      "stage": "Drafted",
+      "audience": "Buyers",
+      "tone": "Local Insight"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "Flood Zone Reality Check",
+      "category": "Neighborhood & Local Insight",
+      "platform": "Instagram Reels",
+      "stage": "Idea",
+      "audience": "Buyers",
+      "tone": "Warning"
+    },
+    {
+      "workspace": "Walk The Walk",
+      "title": "The 800 Paint Job That Cost 23,000",
+      "category": "Seller Prep",
+      "platform": "Instagram Reels",
+      "stage": "Filmed",
+      "audience": "Sellers",
+      "tone": "Story"
+    }
+  ],
+  "goldeneye": [
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "The Closing That Almost Died Over a Middle Initial",
+      "category": "Legal & Contract",
+      "platform": "LinkedIn",
+      "stage": "Filmed",
+      "audience": "Buyers & Sellers",
+      "tone": "Story"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Three Contract Clauses That Save Clients Thousands",
+      "category": "Legal & Contract",
+      "platform": "LinkedIn",
+      "stage": "Idea",
+      "audience": "Buyers & Sellers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "What Happens When You Skip Title Insurance",
+      "category": "Legal & Contract",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "Buyers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Why As-Is Doesn't Mean What People Think It Means",
+      "category": "Legal & Contract",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "Buyers & Sellers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Why Overpricing Costs Sellers Money",
+      "category": "Seller Prep",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "Sellers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Your Pre-Approval Is Not a Guarantee",
+      "category": "First-Time Buyers",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "First-Time Buyers",
+      "tone": "Warning"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Hidden Costs That Kill Your Rental ROI",
+      "category": "Investors",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "Investors",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "What Actually Happens Between Offer and Closing",
+      "category": "Process Explainers",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "Buyers & Sellers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Why Appraisals Come In Low",
+      "category": "Process Explainers",
+      "platform": "Facebook",
+      "stage": "Idea",
+      "audience": "Buyers & Sellers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Escrow, Title, Settlement \u2014 What's the Difference?",
+      "category": "Process Explainers",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "Buyers & Sellers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Five Repairs That Pay Off, Five That Don't",
+      "category": "Seller Prep",
+      "platform": "LinkedIn",
+      "stage": "Idea",
+      "audience": "Sellers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "What Buyers Notice in the First 30 Seconds",
+      "category": "Seller Prep",
+      "platform": "Facebook",
+      "stage": "Drafted",
+      "audience": "Sellers",
+      "tone": "Checklist"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Staging Versus Deep Cleaning",
+      "category": "Seller Prep",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "Sellers",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Hidden Costs That Kill Your Rental ROI",
+      "category": "Investors",
+      "platform": "LinkedIn",
+      "stage": "Drafted",
+      "audience": "Investors",
+      "tone": "Explainer"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "Why the 1% Rule Doesn't Work Everywhere",
+      "category": "Investors",
+      "platform": "LinkedIn",
+      "stage": "Idea",
+      "audience": "Investors",
+      "tone": "Perspective"
+    },
+    {
+      "workspace": "Goldeneye Realty",
+      "title": "What Makes a Good Flip Versus a Good Rental",
+      "category": "Investors",
+      "platform": "Facebook",
+      "stage": "Idea",
+      "audience": "Investors",
+      "tone": "Comparison"
+    }
+  ]
+};
+    root.setAttribute('data-theme', theme);
+
+    function renderMode(modeKey){
+      currentBrand = modeKey;
+      root.setAttribute('data-brand', modeKey);
+      const mode = modes[modeKey];
+      const brandLogo = document.getElementById('brand-logo');
+      brandLogo.src = brandLogos[modeKey];
+      brandLogo.alt = mode.title + ' logo';
+      document.getElementById('brand-title').textContent = mode.title;
+      document.getElementById('brand-subtitle').textContent = mode.subtitle;
+      document.getElementById('sidebar-status').innerHTML = `<strong>${mode.statusTitle}</strong><span>${mode.statusCopy}</span>`;
+      document.getElementById('hero-eyebrow').textContent = mode.eyebrow;
+      document.getElementById('hero-note').textContent = mode.note;
+      document.getElementById('hero-title').textContent = mode.heroTitle;
+      document.getElementById('hero-copy').textContent = mode.heroCopy;
+      document.getElementById('hero-cta-primary').textContent = mode.ctaPrimary;
+      document.getElementById('hero-cta-secondary').textContent = mode.ctaSecondary;
+      document.getElementById('hero-footnote').textContent = mode.heroFootnote;
+      document.getElementById('metrics-copy').textContent = mode.metricsCopy;
+      document.getElementById('focus-copy').textContent = mode.focusCopy;
+      document.getElementById('scripts-copy').textContent = mode.scriptsCopy;
+      document.getElementById('composer-copy').textContent = mode.composerCopy;
+      document.getElementById('composer-text').placeholder = mode.placeholder;
+      document.getElementById('settings-copy').textContent = mode.settingsCopy;
+      document.getElementById('footer-copy').textContent = mode.footer;
+      document.getElementById('metric-4').classList.toggle('hidden', !mode.showFourthMetric);
+      document.getElementById('goldeneye-board').classList.toggle('hidden', !mode.showGoldeneyeBoard);
+
+      const heroChips = document.getElementById('hero-chips');
+      heroChips.innerHTML = mode.heroChips.map(c => `<span class="chip">${c}</span>`).join('');
+      mode.metrics.forEach((m, i) => {
+        document.getElementById(`metric-${i+1}-label`).textContent = m[0];
+        document.getElementById(`metric-${i+1}-value`).textContent = m[1];
+      });
+      const focusCards = document.getElementById('focus-cards');
+      focusCards.innerHTML = mode.focus.map(card => currentBrand === 'goldeneye'
+        ? `<article class="quick-card"><div class="label">${card[0]}</div><div><h4>${card[0]}</h4><p>${card[1]}</p></div></article>`
+        : `<article class="quick-card"><h4>${card[0]}</h4><p>${card[1]}</p></article>`).join('');
+
+      const scriptGrid = document.getElementById('script-grid');
+      scriptGrid.innerHTML = mode.scripts.map(([title, chips, text]) => `
+        <article class="script-card" data-channel="linkedin">
+          <div><div class="chip-row">${chips.map(c => `<span class="chip">${c}</span>`).join('')}</div><h4>${title}</h4></div>
+          <div class="script-text">${text}</div>
+          <div class="script-actions">
+            <button class="mini-btn" data-script-text="${text.replace(/"/g,'&quot;')}">Load</button>
+            <button class="mini-btn">Copy</button>
+          </div>
+        </article>
+      `).join('');
+      document.getElementById('settings-chips').innerHTML = mode.settingsChips.map(c => `<span class="chip">${c}</span>`).join('');
+      document.querySelectorAll('[data-brand-target]').forEach(btn => {
+        const active = btn.dataset.brandTarget === modeKey;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      bindScriptButtons();
+    }
+
+    function bindScriptButtons(){
+      document.querySelectorAll('[data-script-text]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.getElementById('composer-text').value = btn.dataset.scriptText;
+          document.getElementById('composer-status').textContent = currentBrand === 'walk' ? 'Loaded personal marketing script.' : 'Loaded CRM workflow script.';
+        });
+      });
+    }
+
+    document.querySelectorAll('[data-brand-target]').forEach(btn => btn.addEventListener('click', () => renderMode(btn.dataset.brandTarget)));
+    document.querySelectorAll('.pill-select button').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('.pill-select button').forEach(b => b.setAttribute('aria-pressed','false'));
+      button.setAttribute('aria-pressed','true');
+    }));
+    toggle.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', theme); });
+    document.getElementById('publish-demo').addEventListener('click', () => {
+      const brandName = currentBrand === 'walk' ? 'Walk The Walk' : 'Goldeneye CRM';
+      document.getElementById('composer-status').textContent = `Publish simulated for ${brandName}.`;
+    });
+    document.getElementById('save-draft').addEventListener('click', () => {
+      document.getElementById('composer-status').textContent = currentBrand === 'walk' ? 'Personal marketing draft saved.' : 'CRM draft saved.';
+    });
+    renderMode('walk');
+  </script>
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+    <a href="#overview" class="active" data-mobile-nav="overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+    <a href="#scripts" data-mobile-nav="scripts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h9l5 5v11H6z"/><path d="M15 4v5h5"/></svg><span>Scripts</span></a>
+    <a href="#composer" data-mobile-nav="composer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>Compose</span></a>
+    <a href="#crm" data-mobile-nav="crm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h10"/></svg><span>CRM</span></a>
+    <a href="#settings" data-mobile-nav="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="M3 12h2m14 0h2M12 3v2m0 14v2m6.364-15.364-1.414 1.414M7.05 16.95l-1.414 1.414m0-12.728L7.05 7.05m9.9 9.9 1.414 1.414"/></svg><span>Settings</span></a>
+  </nav>
+<div class="toast" id="toast">Saved.</div>
+</body>
+</html>
